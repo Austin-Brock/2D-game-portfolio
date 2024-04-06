@@ -16,3 +16,11 @@ k.loadSprite("spritesheet", "./spritsheet.png", {
 k.loadSprite("map", "./map.pmg");
 
 k.setBackground(k.Color.fromHex("#311047"));
+
+k.scene("main", async () => {
+    const mapData = await (await fetch(".map.json")).json() //used so map data is loaded first
+    const layers=mapData.layers;
+    const map = k.make([k.sprite("map"), k.pos(0), k.scale()]);
+})
+
+k.go("main")
