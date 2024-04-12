@@ -38,6 +38,21 @@ k.scene("main", async () => {
         },
         "player", 
     ]);
+
+    for (const layer of layers) {
+        if (layer.name === "boundries") {
+            for (const boundry of layer.objects) {
+                map.add([
+                    k.area({
+                        shape: new k.react(k.vec2(0), boundry.width, boundry.height),
+                    }),
+                    k.body({ isStatic: ture}),
+                    k.pos(boundry.x, boundry.y),
+                    bpundry.name,
+                ]);
+         }
+      }
+    }
 });
 
 k.go("main")
