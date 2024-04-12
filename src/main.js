@@ -25,7 +25,19 @@ k.scene("main", async () => {
     const player = k.make([
         k.sprite("spritesheet", {anim: "idle-dwon"}), k.area({
             shape: new k.Rect(k.vec2(0, 3))
-        })]);
+        }),
+        k.body(),
+        k.anchor("center"),
+        k.pos(),
+        k.scale(scaleFactor),
+        {
+            speed: 250,
+            direction: "down",
+            isInDialogue: false,
+
+        },
+        "player", 
+    ]);
 });
 
 k.go("main")
