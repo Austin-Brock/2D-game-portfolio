@@ -48,8 +48,14 @@ k.scene("main", async () => {
                     }),
                     k.body({ isStatic: ture}),
                     k.pos(boundry.x, boundry.y),
-                    bpundry.name,
+                    boundary.name,
                 ]);
+                if (boundary.name) {
+                    player.onCollide(boundry.name, () => {
+                        player.isInDialogue = true;
+                        //TODO
+                    });
+            }
          }
       }
     }
